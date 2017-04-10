@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/elasticsearch-plugin-stub.iml" filepath="$PROJECT_DIR$/.idea/modules/elasticsearch-plugin-stub.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/elasticsearch-plugin-stub_main.iml" filepath="$PROJECT_DIR$/.idea/modules/elasticsearch-plugin-stub_main.iml" group="elasticsearch-plugin-stub" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/elasticsearch-plugin-stub_test.iml" filepath="$PROJECT_DIR$/.idea/modules/elasticsearch-plugin-stub_test.iml" group="elasticsearch-plugin-stub" />
+    </modules>
+  </component>
+</project>
