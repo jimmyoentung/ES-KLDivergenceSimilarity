@@ -27,7 +27,7 @@ def esPluginPath = Paths.get(esPath, "/modules/${rootProject.name}")
 
 - modify the settings.grade:
 ```
-rootProject.name = 'es-kldivergence'
+rootProject.name = 'lm-kldivergence'
 ```
 
 - rename the project package into: com.github.jimmyoentung.eskldivergencesimilarity
@@ -39,14 +39,14 @@ rootProject.name = 'es-kldivergence'
 description=ES KL Divergence Similarity Plugin
 version=1.0
 name=ES KL Divergence Similarity Plugin
-classname=KLDivergenceSimilarity
+classname=com.github.jimmyoentung.eskldivergencesimilarity.KLDivergenceSimilarityPlugin
 java.version=1.8
 elasticsearch.version=5.1.1
 ```
 
 - modify the KLDivergenceSimilarityPlugin:
 ```
-private static final String SIMILARITY_NAME = "KLDivergenceSimilarity";
+private static final String SIMILARITY_NAME = "KLDivergence";
 ```
 
 
