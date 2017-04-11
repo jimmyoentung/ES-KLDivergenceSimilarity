@@ -6,6 +6,8 @@
       <module name="elasticsearch-plugin-stub_test" target="1.8" />
       <module name="es-kldivergence_main" target="1.8" />
       <module name="es-kldivergence_test" target="1.8" />
+      <module name="lm-kldivergence_main" target="1.8" />
+      <module name="lm-kldivergence_test" target="1.8" />
     </bytecodeTargetLevel>
   </component>
 </project>

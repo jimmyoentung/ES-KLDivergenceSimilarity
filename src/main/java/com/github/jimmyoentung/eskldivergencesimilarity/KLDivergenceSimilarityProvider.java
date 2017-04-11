@@ -28,6 +28,7 @@ public class KLDivergenceSimilarityProvider extends AbstractSimilarityProvider {
     public KLDivergenceSimilarityProvider(String name, Settings settings) {
         super(name);
         float mu = settings.getAsFloat("mu", 2000f);
+
         this.similarity = new KLDivergenceSimilarity(mu);
     }
 

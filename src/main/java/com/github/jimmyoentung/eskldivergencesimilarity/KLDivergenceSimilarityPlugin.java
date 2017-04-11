@@ -9,7 +9,7 @@ import org.elasticsearch.plugins.Plugin;
 //
 public class KLDivergenceSimilarityPlugin extends Plugin {
 
-    private static final String SIMILARITY_NAME = "KLDivergenceSimilarity";
+    private static final String SIMILARITY_NAME = "KLDivergence";
 
     @Override
     public void onIndexModule(IndexModule indexModule) {

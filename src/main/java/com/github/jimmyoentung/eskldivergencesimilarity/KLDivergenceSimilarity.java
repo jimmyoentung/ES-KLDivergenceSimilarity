@@ -3,9 +3,16 @@ package com.github.jimmyoentung.eskldivergencesimilarity;
 import java.util.List;
 import java.util.Locale;
 
+
 import org.apache.lucene.search.Explanation;
+import org.apache.lucene.search.TermQuery;
 import org.apache.lucene.search.similarities.LMSimilarity;
 import org.apache.lucene.search.similarities.BasicStats;
+
+
+import org.apache.lucene.search.Query;
+
+
 
 //
 // Created by Harry Scells on 6/4/17.
@@ -54,9 +61,19 @@ public class KLDivergenceSimilarity extends LMSimilarity {
 
     @Override
     protected float score(BasicStats stats, float freq, float docLen) {
-        float score = stats.getBoost() * (float)(Math.log(1 + freq /
+        /*float score = stats.getBoost() * (float)(Math.log(1 + freq /
                 (mu * ((LMStats)stats).getCollectionProbability())) +
                 Math.log(mu / (docLen + mu)));
+        */
+
+        /*float score = stats.getBoost() * (float)((freq + mu * ((LMStats)stats).getCollectionProbability()) /
+                (mu + docLen));
+        */
+
+
+
+
+
         return score > 0.0f ? score : 0.0f;
     }
 
@@ -85,6 +102,6 @@ public class KLDivergenceSimilarity extends LMSimilarity {
 
     @Override
     public String getName() {
-        return String.format(Locale.ROOT, "Dirichlet(%f)", getMu());
+        return String.format(Locale.ROOT, "KL Divergence(%f)", getMu());
     }
 }

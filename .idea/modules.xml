@@ -2,9 +2,9 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/es-kldivergence.iml" filepath="$PROJECT_DIR$/.idea/modules/es-kldivergence.iml" />
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/es-kldivergence_main.iml" filepath="$PROJECT_DIR$/.idea/modules/es-kldivergence_main.iml" group="es-kldivergence" />
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/es-kldivergence_test.iml" filepath="$PROJECT_DIR$/.idea/modules/es-kldivergence_test.iml" group="es-kldivergence" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/lm-kldivergence.iml" filepath="$PROJECT_DIR$/.idea/modules/lm-kldivergence.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/lm-kldivergence_main.iml" filepath="$PROJECT_DIR$/.idea/modules/lm-kldivergence_main.iml" group="lm-kldivergence" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/lm-kldivergence_test.iml" filepath="$PROJECT_DIR$/.idea/modules/lm-kldivergence_test.iml" group="lm-kldivergence" />
     </modules>
   </component>
 </project>
