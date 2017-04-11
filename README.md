@@ -1,12 +1,47 @@
-# Elasticsearch Plugin Stub
+# Elasticsearch KL Divergence Similarity Plug in
 
-These project files document how to create a custom similarity scoring plugin for elasticsearch.
+These project objective is to implement LM KL Divergence similarity plug in to Elasticsearch 5.1.1. Template used to develop this plug in is: https://github.com/hscells/elasticsearch-similarity-plugin-stub
 
-First of all, you need to define an `ES_PATH` environment variable. If you installed elasticsearch through 
-`brew`, you can find this out using `brew list elasticsearch`:
+- download/clone this project to desktop
+
+- define an `ES_PATH` environment variable using terminal/command. for example:
 
 ```bash
-export ES_PATH=/usr/local/Cellar/elasticsearch/5.3.0
+export ES_PATH=/usr/local/Cellar/elasticsearch/5.1.1
+```
+
+- use IntelliJ Idea to import the project as a Gradle project
+
+- modify the build.gradle:
+```
+group 'com.github.jimmyoentung'
+
+dependencies {
+    compile group: 'org.elasticsearch', name: 'elasticsearch', version: '5.1.1'
+
+    testCompile group: 'junit', name: 'junit', version: '4.11'
+}
+
+def esPluginPath = Paths.get(esPath, "/modules/${rootProject.name}")
+```
+
+- modify the settings.grade:
+```
+rootProject.name = 'es-kldivergence'
+```
+
+- rename the project package into: com.github.jimmyoentung.eskldivergencesimilarity
+
+- rename MyCustomSimilarity, MyCustomSimilarityPlugin, and MyCustomSimilarityProvider classes to KLDivergenceSimilarity, KLDivergenceSimilarityPlugin, and KLDivergenceSimilarityProvider
+
+- modify the plugin-descriptor.properties:
+```
+description=ES KL Divergence Similarity Plugin
+version=1.0
+name=ES KL Divergence Similarity Plugin
+classname=KLDivergenceSimilarity
+java.version=1.8
+elasticsearch.version=5.1.1
 ```
 
 Next, you may wish to rename the package from `com.github.hscells.customsimilarity` to something more 
