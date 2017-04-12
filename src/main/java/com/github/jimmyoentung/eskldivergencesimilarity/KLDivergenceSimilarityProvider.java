@@ -11,16 +11,6 @@ import org.elasticsearch.common.settings.Settings;
 import org.elasticsearch.index.similarity.AbstractSimilarityProvider;
 
 
-
-/**
- * {@link SimilarityProvider} for {@link LMDirichletSimilarity}.
- * <p>
- * Configuration options available:
- * <ul>
- *     <li>mu</li>
- * </ul>
- * @see LMDirichletSimilarity For more information about configuration
- */
 public class KLDivergenceSimilarityProvider extends AbstractSimilarityProvider {
 
     private final KLDivergenceSimilarity similarity;
@@ -28,8 +18,9 @@ public class KLDivergenceSimilarityProvider extends AbstractSimilarityProvider {
     public KLDivergenceSimilarityProvider(String name, Settings settings) {
         super(name);
         float mu = settings.getAsFloat("mu", 2000f);
+        float ad = settings.getAsFloat("ad", 700f);
 
-        this.similarity = new KLDivergenceSimilarity(mu);
+        this.similarity = new KLDivergenceSimilarity(mu, ad);
     }
 
     /**

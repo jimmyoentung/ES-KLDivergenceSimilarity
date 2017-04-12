@@ -38,25 +38,33 @@ public class KLDivergenceSimilarity extends LMSimilarity {
     /** The &mu; parameter. */
     private final float mu;
 
-    /** Instantiates the similarity with the provided &mu; parameter. */
-    public KLDivergenceSimilarity(CollectionModel collectionModel, float mu) {
+    /** The alphaD parameter. */
+    private final float ad;
+
+    /** Instantiates the similarity with the provided &mu; and alphaD parameter. */
+    public KLDivergenceSimilarity(CollectionModel collectionModel, float mu, float ad) {
         super(collectionModel);
         this.mu = mu;
+        this.ad = ad;
     }
 
     /** Instantiates the similarity with the provided &mu; parameter. */
-    public KLDivergenceSimilarity(float mu) {
+    public KLDivergenceSimilarity(float mu, float ad) {
         this.mu = mu;
+        this.ad = ad;
     }
 
-    /** Instantiates the similarity with the default &mu; value of 2000. */
+    /** Instantiates the similarity with the default &mu; value of 2000.
+     * alphaD default value is 700 based on the average of CluewebB body field length*/
     public KLDivergenceSimilarity(CollectionModel collectionModel) {
-        this(collectionModel, 2000);
+        this(collectionModel, 2000, 700);
+
     }
 
-    /** Instantiates the similarity with the default &mu; value of 2000. */
+    /** Instantiates the similarity with the default &mu; value of 2000.
+     *  alphaD default value is 700 based on the average of CluewebB body field length*/
     public KLDivergenceSimilarity() {
-        this(2000);
+        this(2000, 700);
     }
 
     @Override
@@ -70,9 +78,10 @@ public class KLDivergenceSimilarity extends LMSimilarity {
                 (mu + docLen));
         */
 
-
-
-
+        float score = stats.getBoost() *
+                (float)(Math.log(((freq + mu * ((LMStats)stats).getCollectionProbability()) / (mu + docLen)) /
+                (ad * ((LMStats)stats).getCollectionProbability())) +
+                Math.log(ad));
 
         return score > 0.0f ? score : 0.0f;
     }
